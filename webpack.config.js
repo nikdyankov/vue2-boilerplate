@@ -1,14 +1,27 @@
 const path = require('path');
+const webpack = require('webpack')
+
 const { CleanWebpackPlugin } = require('clean-webpack-plugin'); // Clears everything after a build
 const HtmlWebpackPlugin = require('html-webpack-plugin'); //Generates an HTML file from a template
 
 module.exports = {
+    mode: 'production',
     entry: {
       main: path.resolve(__dirname, './src/index.js'),
     },
     output: {
         path: path.resolve(__dirname, './dist'),
         filename: '[name].bundle.js',
+    },
+    devServer: {
+      host: '0.0.0.0',
+      port: 8080,
+      https: true,
+      historyApiFallback: true,
+      contentBase: path.resolve(__dirname, './dist'),
+      open: true,
+      compress: true,
+      hot: true
     },
     plugins: [
         new CleanWebpackPlugin(),
@@ -17,6 +30,7 @@ module.exports = {
           template: path.resolve(__dirname, './src/template.html'),
           filename: 'index.html', // output file
         }),
+        new webpack.HotModuleReplacementPlugin() // HMR - Only update what has changed
     ],
     module: {
         rules: [
