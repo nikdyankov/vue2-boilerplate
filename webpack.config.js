@@ -7,11 +7,17 @@ const HtmlWebpackPlugin = require('html-webpack-plugin'); //Generates an HTML fi
 module.exports = {
     mode: 'production',
     entry: {
-      main: path.resolve(__dirname, './src/index.js'),
+      base: '@src/js/base.js',
     },
     output: {
         path: path.resolve(__dirname, './dist'),
         filename: '[name].bundle.js',
+        publicPath: '/'
+    },
+    resolve: {
+      alias: {
+        '@src': path.resolve(__dirname, './src')
+      },
     },
     devServer: {
       host: '0.0.0.0',
