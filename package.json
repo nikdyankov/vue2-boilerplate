@@ -1,0 +1,35 @@
+{
+  "name": "vue2-boilerplate-template",
+  "version": "1.0.0",
+  "description": "This is a Vue2 boilerplate template",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nikdyankov/vue2-boilerplate.git"
+  },
+  "keywords": [
+    "Vue2",
+    "Webpack5",
+    "boilerplate"
+  ],
+  "author": "Nikolay Dyankov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nikdyankov/vue2-boilerplate/issues"
+  },
+  "homepage": "https://github.com/nikdyankov/vue2-boilerplate#readme",
+  "devDependencies": {
+    "@babel/core": "^7.14.3",
+    "@babel/plugin-proposal-class-properties": "^7.13.0",
+    "@babel/preset-env": "^7.14.2",
+    "babel-loader": "^8.2.2",
+    "clean-webpack-plugin": "^4.0.0-alpha.0",
+    "html-webpack-plugin": "^5.3.1",
+    "webpack": "^5.37.1",
+    "webpack-cli": "^4.7.0"
+  }
+}
